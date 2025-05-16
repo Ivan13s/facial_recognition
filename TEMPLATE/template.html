@@ -1,0 +1,25 @@
+<!-- Acest template se leaga la function 53,CONFIGURATIIA FIIND: INTRARI/IESIRI-FUNCTION 52-FUNCTION 53-TEMPLATE --> 
+
+
+<div style="font-family: Arial, sans-serif; padding:10px;">
+    <h3>Continut fisier:</h3>
+    <ul id="new-line"></ul>
+    </div>
+
+<script>
+    (function(scope){
+        scope.$watch('msg',function(msg)
+        {
+            if(msg && msg.topic==="new_line"){
+                let ul=document.getElementById("new-line");
+                let li=document.createElement("li");
+                li.textContent=msg.payload;
+                ul.appendChild(li);
+            }
+        })
+        })(scope);
+
+
+</script>
+
+
